@@ -1,0 +1,364 @@
+/* 
+Responsive Web Design (Beta)
+Tribute Page
+Build a Tribute Page
+Objective: Build a CodePen.io app that is functionally similar to this: https://codepen.io/freeCodeCamp/full/zNqgVx.
+
+Fulfill the below user stories and get all of the tests to pass. Give it your own personal style.
+
+You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is recommended because that is what the lessons have covered so far and you should get some practice with plain CSS. You can use Bootstrap or SASS if you choose. Additional technologies (just for example jQuery, React, Angular, or Vue) are not recommended for this project, and using them is at your own risk. Other projects will give you a chance to work with different technology stacks like React. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
+
+User Story #1: My tribute page should have an element with a corresponding id="main", which contains all other elements.
+
+User Story #2: I should see an element with a corresponding id="title", which contains a string (i.e. text) that describes the subject of the tribute page (e.g. "Dr. Norman Borlaug").
+
+User Story #3: I should see either a figure or a div element with a corresponding id="img-div".
+
+User Story #4: Within the img-div element, I should see an img element with a corresponding id="image".
+
+User Story #5: Within the img-div element, I should see an element with a corresponding id="img-caption" that contains textual content describing the image shown in img-div.
+
+User Story #6: I should see an element with a corresponding id="tribute-info", which contains textual content describing the subject of the tribute page.
+
+User Story #7: I should see an a element with a corresponding id="tribute-link", which links to an outside site that contains additional information about the subject of the tribute page. HINT: You must give your element an attribute of target and set it to _blank in order for your link to open in a new tab (i.e. target="_blank").
+
+User Story #8: The img element should responsively resize, relative to the width of its parent element, without exceeding its original size.
+
+User Story #9: The img element should be centered within its parent element.
+
+You can build your project by using this CodePen template and clicking Save to create your own pen. Or you can use this CDN link to run the tests in any environment you like: https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js.
+
+Once you're done, submit the URL to your working project with all its tests passing.
+
+z
+*/
+
+
+body, #main{
+    font-family: 'Poppins', sans-serif;
+    /* background-color: rgb(241, 248, 255); */
+    background-color: aliceblue;
+}
+
+/* 
+Banner and Header
+*/
+
+#img-div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #292929;
+    box-sizing: border-box;
+}
+
+#image{
+    width: 30%;
+}
+
+#img-caption{
+    color: aliceblue;
+    font-style: italic;
+    font-size: calc(2vw - .2rem);
+    font-weight: 100;
+    font-kerning: auto;
+}
+
+#title{
+    position: absolute;
+}
+
+#title{
+    font-size: calc(10vw - 1rem);
+    line-height: 1;
+    text-transform: uppercase;
+    color: aliceblue;
+    font-kerning: auto;
+}
+
+#title > #title-pt2{
+    margin-left: 3.5em;
+}
+
+/*
+Parallax Background imgages
+*/
+
+#img1, #img2, #img3{
+    position: relative;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+
+#img1{
+    background-color: #292929;
+    background-image: url('../images/fela-img6transcopy.png');
+    max-width: 100%;
+    max-height: 70vh;
+    
+}
+
+#img2{
+    background-color: #292929;
+    background-image: url('../images/fela-img7.jpg');
+    max-width: 100%;
+    max-height: 70vh;
+    
+}
+
+#img3{
+    background-color: #292929;
+    background-image: url('../images/fela-img2.jpg');
+    max-width: 100vw;
+    max-height: 70vh;
+    
+    
+    
+}
+
+#more-info{
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    color: #292929;
+    font-size: calc(1vw + 1em);
+    letter-spacing: .5rem;
+    text-transform: uppercase;
+    background-color: aliceblue;
+    z-index: 3;
+
+}
+
+#more-info a{
+    background-color: #292929;
+    text-decoration: none;
+    padding-left: 1em;
+    padding-right: 1em;
+    color: aliceblue;
+}
+
+
+
+
+/* top tint img1 & img2 */
+#color{
+    position: relative;
+    background-color: rgb(20, 20, 20);
+    width: 100%;
+    height: 70vh;
+    opacity: 0.4;
+    z-index: 2;
+}
+
+/*
+Breaking paragraph monotony
+*/
+
+#extra-info{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
+    background-color: #292929;
+    box-sizing: border-box;
+}
+
+#dark-bg{
+    max-width: 70%;
+    padding: 3em  2em;
+    font-size: calc(1vw + .7rem);
+    font-style: oblique;
+    line-height: 2em;
+    letter-spacing: 1.5px;
+    font-weight: 280;
+    color: aliceblue;
+    
+}
+
+/*
+Captions
+*/
+
+#img1-caption{
+    color: aliceblue;
+    z-index: 3;
+}
+
+/*
+Styling Paragraphs
+*/
+
+#years #paragraphs{
+    /* padding-left: 13em; */
+    max-width: 70%;
+    margin: 3em auto;
+}
+
+#years #paragraphs #quote{
+    font-size: calc(1vw + 1rem);
+    font-style: oblique;
+}
+hr{
+    margin-top: 3em;
+}
+#sec{
+    font-weight: 400;
+    line-height: 2em;
+}
+#sec #stand-out{
+    font-weight: 600;
+}
+#sec #p1{
+    margin-top: 3em;
+}
+#sec #p1::before{
+    content: 'Year-1938 :';
+    color: #292929;
+    font-weight: 300;
+    padding: 0 1em;
+    font-size: calc(1vw + 1rem);
+    margin-right: 1em;
+}
+#sec #p2::before{
+    content: 'Year-1958 :';
+    color: #292929;
+    font-weight: 300;
+    padding: 0 1em;
+    font-size: calc(1vw + 1rem);
+    margin-right: 1em;
+}
+
+#sec #p3::before{
+    content: 'Year-1960 :';
+    color: #292929;
+    font-weight: 300;
+    padding: 0 1em;
+    font-size: calc(1vw + 1rem);
+    margin-right: 1em;
+}
+
+#sec #p4::before{
+    content: 'Year-1963 :';
+    color: #292929;
+    font-weight: 300;
+    padding: 0 1em;
+    font-size: calc(1vw + 1rem);
+    margin-right: 1em;
+}
+
+#sec #p5::before{
+    content: 'Year-1967 :';
+    color: #292929;
+    font-weight: 300;
+    padding: 0 1em;
+    font-size: calc(1vw + 1rem);
+    margin-right: 1em;
+}
+
+#sec #p6::before{
+    content: 'Year-1969 :';
+    color: #292929;
+    font-weight: 300;
+    padding: 0 1em;
+    font-size: calc(1vw + 1rem);
+    margin-right: 1em;
+}
+
+#sec #p7::before{
+    content: 'Year-1977 :';
+    color: #292929;
+    font-weight: 300;
+    padding: 0 1em;
+    font-size: calc(1vw + 1rem);
+    margin-right: 1em;
+}
+
+#sec #p8::before{
+    content: 'Year-1978 :';
+    color: #292929;
+    font-weight: 300;
+    padding: 0 1em;
+    font-size: calc(1vw + 1rem);
+    margin-right: 1em;
+}
+
+
+
+#sec #p9::before{
+    content: 'Year-1979 :';
+    color: #292929;
+    font-weight: 300;
+    padding: 0 1em;
+    font-size: calc(1vw + 1rem);
+    margin-right: 1em;
+}
+
+#sec #p10::before{
+    content: 'Year-1983 :';
+    color: #292929;
+    font-weight: 300;
+    padding: 0 1em;
+    font-size: calc(1vw + 1rem);
+    margin-right: 1em;
+}
+
+#sec #p11::before{
+    content: 'Year-1984 :';
+    color: #292929;
+    font-weight: 300;
+    padding: 0 1em;
+    font-size: calc(1vw + 1rem);
+    margin-right: 1em;
+}
+
+#sec #p12::before{
+    content: 'Year-1993 :';
+    color: #292929;
+    font-weight: 300;
+    padding: 0 1em;
+    font-size: calc(1vw + 1rem);
+    margin-right: 1em;
+}
+
+#sec #p13::before{
+    content: 'Year-1997 :';
+    color: #292929;
+    font-weight: 300;
+    padding: 0 1em;
+    font-size: calc(1vw + 1rem);
+    margin-right: 1em;
+}
+
+#sec #p14::before{
+    content: 'Year-1969 :';
+    color: #292929;
+    font-weight: 300;
+    padding: 0 1em;
+    font-size: calc(1vw + 1rem);
+    margin-right: 1em;
+}
+
+#sec #brackets{
+    font: caption;
+    font-stretch: semi-expanded;
+}
+
+#footer{
+    width: 70vw;
+    max-width: 70%;
+    margin: 3em auto;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-weight: 300;
+    font-style: oblique;
+}
